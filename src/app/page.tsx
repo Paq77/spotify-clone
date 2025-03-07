@@ -1,9 +1,28 @@
-import Image from "next/image";
+import { Sidebar } from "../components/sidebar/sidebar";
+import { Header } from "../components/header/header";
 
-export default function Home() {
+
+async function fetchSongs() {
+  const data = await fetch('https://api.mockapi.com/api/v1/songs', {
+    method: 'GET',
+    headers: {
+        'x-api-key': 'f63d36e0e80f4a72ae697acae29097d9'
+    }
+  })
+  const songs = await data.json();
+  
+  return songs;
+}
+
+export default async function Home() {
+  const fetchedSongs = await fetchSongs()
   return (
-    <div>
-      <span className="text-7xl">Witaj spotify</span>
-    </div>
+    <>
+      <main className="w-screen flex justify-center flex-col gap-y-4 overflow-y-hidden ">
+        <Sidebar songs={fetchedSongs}></Sidebar>
+        <Header></Header>
+      </main>
+      
+    </>
   );
 }
