@@ -5,12 +5,14 @@ import { SidebarSong } from "./sidebarsong";
 export const SidebarSongs = ( {songs}: Array<Song> ) => {
     return (
       <>
-        {songs.map( (song: Song, idx: Number) => 
+      <div>
+        {songs.map( (song: Song, idx: number) => 
             (<>
-            <SidebarSong song={song} key={idx}></SidebarSong>
+            <SidebarSong key={idx} song={song}></SidebarSong>
             </>
             )
         )}
+        </div>
       </>
     );
   };
