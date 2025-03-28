@@ -1,6 +1,6 @@
 import { Song } from "../../types/song";
-import { SidebarHeader } from "./sidebarheader";
-import { SidebarSongs } from "./sidebarsongs";
+import { SidebarHeader } from "./header";
+import { SidebarSongs } from "./songs";
 
 export const Library = ( {songs}: Array<Song>) => {
     return (

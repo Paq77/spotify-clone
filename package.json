@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/auth-ui-react": "^0.4.7",
+    "@supabase/supabase-js": "^2.49.1",
     "dotenv": "^16.4.7",
     "next": "15.1.7",
     "next-auth": "^4.24.11",
